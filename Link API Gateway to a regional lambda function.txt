@@ -1,0 +1,21 @@
+To Link API Gateway to a regional lambda function:
+1.	From the main AWS console, select API Gateway
+2.	Click the “Get Started” button.
+3.	In the new screen, click “OK” to remove the popover box. In the top section, change the selection to “New API”.
+4.	Provide a name for the API – you can use the same name that you used for the Lambda function. Description is optional.
+5.	For Endpoint type, change the selection to “Regional”.
+6.	In the new screen, click the Actions button and select “Create Resource”.
+7.	Provide a Resource Name; this can be the same as the name for the API and the Lambda function if you wish.
+8.	Click “Create Resource”
+9.	Click the Actions button again, and select “Create Method”.
+10.	A small box will appear under the new API name. Click the dropdown for that box, and select “GET”. Then, click the checkmark that appears to the right of the box.
+11.	The Setup options will appear to the right. Leave Lambda selected, and for “Lambda Region”, select the region that your Lambda function is in. Note that this selection lists uses the location codes, whereas the region controls from earlier used city names, so you may need to look up the region code for that city to ensure they match.
+12.	Begin typing the name of the Lambda function, and the rest of the function’s name should appear; click that name when it does. If it doesn’t appear, then the Lambda function may not have been saved, or the region selection may be incorrect.
+13.	13: Click Save.
+14.	Click the Actions button again, and select Deploy API.
+15.	In the popover window, select a deployment stage. You may need to select “[New Stage]”, in which case you must also provide a Stage name. We named our stage “prod”. The other textboxes are optional.
+16.	Click “Deploy”.
+17.	You will now be in the Stages console. In the column in the middle-left of the screen, expand the stage name.
+18.	Click the “GET” link from the expansion.
+19.	The URL to call your Lambda function is the Invoke URL that appears for this GET option.
+Note that if you use the link from the Prod selection, you will likely encounter this error at that address: {"message":"Missing Authentication Token"}.

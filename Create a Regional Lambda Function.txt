@@ -1,0 +1,11 @@
+
+To Create Regional Lambda functions:
+1.	From the main AWS console, select Lambda.
+2.	In the top-right corner of the window, select the region that you wish to use.
+3.	In the Get Started screen, click “Create a Function”
+4.	Leave “Author from scratch” selected. Enter a name for the function, and for Runtime select Node.js 6.10.
+5.	For Role, you can create a role based on the existing template named “Basic Edge Lambda Permissions without any changes”.
+6.	Click “Create Function”.
+7.	The Lambda screen will now load. Type the function into the “Function code” section.
+8.	In the “Basic settings” section below, change the Timeout value to 5 seconds. This will match the default 5 seconds for Lambda@Edge functions.
+9.	Press the Save button at the top-right.

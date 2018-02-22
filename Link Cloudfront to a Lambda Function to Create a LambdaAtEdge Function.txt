@@ -1,0 +1,14 @@
+To Link Cloudfront to a Lambda Function to Create a Lambda@Edge Function:
+1.	You must have an existing Lambda function in the UE-East1 region (northern Virginia), with the default RAM allocation of 128 MB.
+2.	In the console for that function, click Actions and select Publish New Version. Save a numbered version of the function
+3.	Go to the Cloudfront console and select Create Distribution
+4.	Select Get Started in the “Web” section
+5.	In the Origin Settings, select the S3 bucket that your Lambda function is saved in. The function will always have an S3 bucket, even if one was not specified when the function was created.
+6.	In the Default Cache Behavior Settings, set the Event Type to Viewer Request.
+7.	For the Lambda Function ARN, copy the ARN from the Lambda console into this textbox, and include “:[VersionNumber]” at the end of the ARN, where “[VersionNumber]” is the number that Lambda assigned when the function was published (omit the brackets). The result should have a format like “arn:aws:lambda:us-east-1:123456789012:function:FunctionName:1”
+8.	In Distribution Settings, add a comment to describe the function.
+9.	Press “Publish”. You will then be taken back to the Distributions console.
+10.	Click the ID of the distribution that you just created; this will take you to its General information.
+11.	The address to access the function is the Domain Name value, it will have a format like  d2fw0pbpgh81di.cloudfront.net.
+12.	The distribution will require several minutes to deploy. Once it has completed deployment, you can run the function and see the result by using that domain name as a web address.
+
