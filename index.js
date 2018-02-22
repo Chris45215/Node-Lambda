@@ -1,4 +1,4 @@
-import regression from 'regression';
+const regression = require('regression');
 const http = require('http');
 
 const port = 3000;
@@ -38,7 +38,7 @@ function calculateTemperature(){
     //Loop through the temperatures and find December average (hardcoding for December)
     for (var i = monthOfYear - 1; i < temperatureArray.length; i += 12) //start at monthOfYear-1 to compensate for the array starting with 0
     {
-        decemberTemperatureArray.add([yearCounter, temperatureArray[i]]);
+        decemberTemperatureArray.push([yearCounter, temperatureArray[i]]);
         tempRunningTotal += temperatureArray[i];
         yearCounter++;
     }
@@ -51,7 +51,7 @@ function calculateTemperature(){
     //timeUsed[0] holds the number of seconds, and timeUsed[1] has the number of nanoseconds
     var timeInMilliseconds = timeUsed[0] * 1000 + timeUsed[1] / 1000000;
 
-//	returnable = "Temperature result: " + tempAverage.toFixed(2) + ". Time required: " + timeInMicroseconds + " microseconds. And the temperature is: " + tempAverage.toFixed(2)
+
 
     returnable = "Temperature result:" + tempAverage.toFixed(2) + ";Regression prediction:" + regressionTemp.toFixed(2) + "; Internal calculation time(milliseconds):" + timeInMilliseconds + ";";
 
